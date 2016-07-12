@@ -1,0 +1,5 @@
+[plugin]
+description = "Installs ffmpeg library in container"
+version = "0.1.0"
+website_url = "https://github.com/EJIqpEP/dokku-ffmpeg"
+[plugin.config]
