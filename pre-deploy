@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 
-APP="$1"
-IMAGE="$2"
+IMAGE=$(docker images | grep "user/repo" | awk '{print $3}')
 
 echo "-----> Installing ffmpeg ..."
 
