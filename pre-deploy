@@ -13,7 +13,11 @@ fi
 sleep 1 # wait so that docker run has not exited before docker attach
 EOF
 )
+echo "IMAGE: $IMAGE"
+echo "COMMAND: $COMMAND"
 ID=$(docker run -d $IMAGE /bin/bash -e -c "$COMMAND")
+
+# sudo docker exec -it f63710e917d8 bash
 #enable logs
 docker attach $ID
 test $(docker wait $ID) -eq 0
